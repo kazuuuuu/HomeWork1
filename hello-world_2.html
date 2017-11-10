@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>HomeWork1</title>
+<style type="text/css">
+#mainContent {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: xx-large;
+	font-weight: bold;
+	background-color: #E3F0FB;
+	border-radius: 4px;
+	padding: 10px;
+	text-align: center;
+}
+.buttonStyle {
+	border-radius: 4px;
+	border: thin solid #F0E020;
+	padding: 5px;
+	background-color: #F8F094;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: bold;
+	color: #663300;
+	width: 200px;
+}
+
+.buttonStyle:hover {
+	border: thin solid #FFCC00;
+	background-color: #FCF9D6;
+	color: #996633;
+	cursor: pointer;
+}
+.buttonStyle:active {
+	border: thin solid #99CC00;
+	background-color: #F5FFD2;
+	color: #669900;
+	cursor: pointer;
+}
+.buttonType {
+	border-radius: 4px;
+	border: thin solid #CEF6F5;
+	padding: 5px;
+	background-color: #F5A9E1;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: bold;
+	color: #663300;
+	width: 200px;
+}
+
+</style>
+</head>
+
+<body>
+
+<form method="post" action="hello-world_1.html">
+
+<center><input type="submit" onclick="returnPage()" value="前のページに戻る" class="buttonStyle"/></center>
+
+<table align="center">
+	<tr>
+		<td align="center" bgcolor="#ffff00">iPhone8</td>
+		<td align="center" bgcolor="#ffff00">iPhoneX</td>
+	</tr>
+	<tr bgcolor="#80ffff" align="center">
+		<td>
+			<div id="disp1"><img src="/images/iPhone8.jpg" width="350"></div>
+		</td>
+		<td>
+			<div id="disp2"><img src="/images/iPhoneX.png" width="350"></div>
+		</td>
+	</tr>
+	<tr colspan="2" align="center">
+		<td>
+			公式サイト：<a href="https://www.apple.com/jp/iphone-8/" target="_blank">こちら</a>
+		</td>
+		<td>
+			公式サイト：<a href="https://www.apple.com/jp/iphone-x/" target="_blank">こちら</a>
+		</td>
+	</tr>
+	<tr bgcolor="#BCF5A9">
+		<td>
+			<input type="button" value="表示" onclick="hyoji1(0)" class="buttonStyle">
+			<input type="button" value="非表示" onclick="hyoji1(1)" class="buttonStyle">
+			</br></br>
+			<input type="button" value="背景を指定" onclick="changeBG('/images/iPhone8.jpg')" class="buttonType">
+			<input type="button" value="背景を戻す" onclick="changeBG('')" class="buttonType">
+		</td>
+		<td>
+			<input type="button" value="表示" onclick="hyoji2(0)" class="buttonStyle">
+			<input type="button" value="非表示" onclick="hyoji2(1)" class="buttonStyle">
+			</br></br>
+			<input type="button" value="背景を指定" onclick="changeBG('/images/iPhoneX.png')" class="buttonType">
+			<input type="button" value="背景を戻す" onclick="changeBG('')" class="buttonType">
+		</td>
+	</tr>
+</table>
+
+</form>
+
+<script>
+
+//前ページ表示
+function returnPage() {
+	if(window.confirm("前のページに戻ってもよろしいですか？")){
+		document.forms.submit();
+	}else{
+		return false;
+	}
+}
+
+//iPhone8用
+function hyoji1(num)
+{
+  if (num == 0)
+  {
+    document.getElementById("disp1").style.display="block";
+  }
+  else
+  {
+    document.getElementById("disp1").style.display="none";
+  }
+}
+
+//iPhoneX用
+function hyoji2(num)
+{
+  if (num == 0)
+  {
+    document.getElementById("disp2").style.display="block";
+  }
+  else
+  {
+    document.getElementById("disp2").style.display="none";
+  }
+}
+
+//背景設定用
+function changeBG(ImageName){
+	if(window.confirm("設定してもよろしいですか？")){
+		document.body.style.backgroundImage = "url(" + ImageName + ")";
+	}else{
+		return false;
+	}
+}
+
+</script>
+
+</body>
+</html>
